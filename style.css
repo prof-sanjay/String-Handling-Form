@@ -1,0 +1,16 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    padding-left: 44px;
+    width: 14vw;
+    height: 90vh;
+    border: 1px solid black;
+}
+button{
+    margin-top: 20px;
+}

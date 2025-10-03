@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <form onsubmit="handle(event)">
+        <h1>String Handling</h1>
+        
+        <label for="name">Name: </label>
+        <input type="text" id="name">
+        
+        <label for="address">Address: </label>
+        <input type="text" id="address">
+        
+        <button type="submit" class="submit">Submit</button>
+      </form>
+      <p id="pad"></p>
+      <p id="rvrsal"></p>
+      <p id="cap"></p>
+      <p id="arr"></p>
+      <p id="delim"></p>
+      <p id="seq"></p>
+      <p id="isseq"></p>
+      <p id="isseq1"></p>
+      <p id="strreplacement"></p>
+    </div>
+  </div>
+
+  <script>
+    function handle(event) {
+      event.preventDefault();
+
+      let name = document.getElementById('name').value;
+      let address = document.getElementById('address').value;
+
+      document.getElementById('pad').textContent = "PadStart: " + name.padStart(8, '0');
+      document.getElementById('rvrsal').textContent = "Reversed: " + name.split("").reverse().join("");
+      document.getElementById('cap').textContent = "Capital: " + (name[0]?.toUpperCase() + name.slice(1));
+      document.getElementById('arr').textContent = "Array: " + [...name];
+      document.getElementById('delim').textContent = "Split: " + name.split(/[,;]/);
+      document.getElementById('seq').textContent = "Includes: " + name.includes("Sanjay");
+      document.getElementById('isseq').textContent = "Starts with " + name.startsWith("Sanjay");
+      document.getElementById('isseq1').textContent = "Ends with " + name.endsWith("Muraleedharan");
+      document.getElementById('strreplacement').textContent = "Replace: " + address.replace(/India/, "Germany");
+    }
+  </script>
+</body>
+</html>
